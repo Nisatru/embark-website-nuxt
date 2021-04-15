@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,800&display=swap');
+
+:root {
+  --embark-blue: #0fa0b4;
+  --embark-red: #b40000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+
+a {
+  color: inherit;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+/* Spacing */
+
+/* All 2nd level items (ie. sections) should have margins... */
+
+/* TODO better solution? */
+body > * > * > * > * > * {
+  margin: 3% 5%;
+}
+
+/* ...Except full-width sections */
+.full-width-section {
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 3% 5%;
+}
+
+.full-width-section p {
+  font-size: 1.3rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Embark theming */
+
+.button-primary {
+  display: inline-block;
+  font-size: 20px;
+  background: var(--embark-blue);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  padding: 0.5em 2em;
+  margin: 1em 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-primary:hover {
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+}
+
+.button-secondary {
+  margin: 1em 1em;
+}
+
+.background-blue {
+  background: var(--embark-blue);
+}
+
+.background-red {
+  background: var(--embark-red);
+}
+
+.background-black {
+  background: black;
+}
+
+.background-grey {
+  background: #eee;
+  color: black;
+}
+
+/* projects-list */
+
+.projects-list li:hover {
+  background: #eee;
+}
+
+/* Dark mode */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #222;
+    color: white;
+  }
+
+  .background-grey {
+    background: #1a1a1a;
+    color: white;
+  }
+
+  .background-blue {
+    /* Embark blue looks way too bright in dark mode, so make it 70% opacity */
+    background: rgba(15, 160, 180, 0.7);
+  }
+
+  .card {
+    background-color: #333;
+    border-color: #333;
+    color: white;
+  }
+
+  .projects-list li:hover {
+    background-color: #333;
+  }
+  .logo-image {
+    fill: white;
+  }
+}
+
+/* etc. */
+.title {
+  margin: 0;
+}
+
+.emoji {
+  font-size: 1.5em;
+  padding-right: 5px;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* used in GithubStats.vue and tags.vue page */
+.github-buttons-container {
+  display: flex;
+  flex-direction: row;
+  text-shadow: none;
+}
+
+.github-buttons-container > div:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 90px;
+  background-image: url('~assets/img/code.jpg');
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.7);
+}
+
+.cover i {
+  margin-right: 10px;
+}
+
+.cover a {
+  text-decoration: none;
+}
+
+.newsletter-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Card */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 350px;
+  margin: 0.5rem 1rem 0.5rem 0;
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.card p {
+  font-size: 1rem;
+}
+
+.card p a:hover {
+  opacity: 0.6;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.project-card,
+.newsletter-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}

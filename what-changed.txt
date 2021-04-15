@@ -1,0 +1,9 @@
+header, back button, newslettercard in a separate component reusable
+TODO: when using store for header etc the search functionality is usable across all routes (/, /tags, /newsletter) and not only on "/" anymore
+TODO: static site generation with data.json
+TODO: shorthand for v-bind:abc -> :abc
+TODO: check if all component in HTML have been replaced / renamed
+TODO: -webkit-details-marker deprecated -> ::marker
+TODO: fetchRepos try catch doesnt console.log when github rate limiting
+
+when opening /tags without query param it no longer shows an empty page -> shows all tags instead
